@@ -1,0 +1,13 @@
+- name: install nginx
+  hosts: web
+  become: yes #take sudo access
+  tasks:
+  - name: Install ntpdate
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: tun  nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes

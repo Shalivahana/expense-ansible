@@ -2,7 +2,7 @@
   hosts: web
   become: yes #take sudo access
   tasks:
-  - name: Install ntpdate
+  - name: Install nginx
     ansible.builtin.package:
       name: nginx
       state: present
